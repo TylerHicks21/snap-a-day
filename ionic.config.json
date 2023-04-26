@@ -1,0 +1,7 @@
+{
+  "name": "snap-a-day",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
