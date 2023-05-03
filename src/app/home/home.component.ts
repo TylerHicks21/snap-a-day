@@ -9,6 +9,12 @@ import { PhotoService } from './data-access/photo.service';
 import { PhotoListCompontentModule } from './ui/photo-list.component';
 import { SlideShowComponentModule } from '../slideshow/slideshow.component';
 
+//
+//
+//
+//
+//
+
 @Component({
   selector: 'app-home',
   template: `
