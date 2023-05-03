@@ -13,7 +13,6 @@ import { SlideShowComponentModule } from '../slideshow/slideshow.component';
 //
 //
 //
-//
 
 @Component({
   selector: 'app-home',
