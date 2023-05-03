@@ -67,8 +67,11 @@ export class PhotoService {
         const fileName = uniqueName + '.jpeg';
         const permanentFile = await Filesystem.writeFile({
           data: photoOnFileSystem.data,
-          path: fileName,
-          directory: Directory.Data,
+          //path: fileName
+          //directory: Directory.Data
+          path: 'snap-a-day/' + fileName,
+          directory: Directory.Documents,
+          recursive: true,
         });
 
         this.addPhoto(fileName, Capacitor.convertFileSrc(permanentFile.uri));
@@ -90,8 +93,10 @@ export class PhotoService {
 
     if (this.plaform.is('capacitor')) {
       await Filesystem.deleteFile({
-        path: name,
-        directory: Directory.Data,
+        //path: name,
+        //directory: Directory.Documents,
+        path: 'snap-a-day/' + name,
+        directory: Directory.Documents,
       });
     }
   }
