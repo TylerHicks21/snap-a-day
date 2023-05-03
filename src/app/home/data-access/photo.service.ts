@@ -81,6 +81,21 @@ export class PhotoService {
     }
   }
 
+  async deletePhoto(name: string) {
+    const newPhotos = this.#photos$.value.filter(
+      (photos) => photos.name !== name
+    );
+
+    this.#photos$.next(newPhotos);
+
+    if (this.plaform.is('capacitor')) {
+      await Filesystem.deleteFile({
+        path: name,
+        directory: Directory.Data,
+      });
+    }
+  }
+
   private addPhoto(fileName: string, filePath: string) {
     const newPhotos = [
       {
